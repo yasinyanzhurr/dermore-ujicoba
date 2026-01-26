@@ -15,31 +15,23 @@
   <!-- =========================
      NAVBAR
 ========================= -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">DERMORE</a>
-      <ul class="nav-menu">
-        <li><a href="product.html">Product</a></li>
-        <li><a href="ingredients.html">Ingredients</a></li>
-        <li><a href="clinical.html" class="active">Clinical Study</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div id="navbar"></div>
+
 
 
   <!-- =========================
      HERO SECTION
 ========================= -->
-  <section class="hero fade-section">
-    <img src="assets/images/science/lab-2.png" alt="Dermore clinical research">
+  <section class="hero hero-bg hero-clinical fade-section">
     <div class="hero-text">
       <h1>Human-Based Clinical Study</h1>
       <p>
         Evaluating real skin response through
-        science-backed observation.
+        science-backed human observation.
       </p>
     </div>
   </section>
+
 
   <!-- =========================
      INTRODUCTION
@@ -82,15 +74,40 @@
   <!-- =========================
      PARAMETERS EVALUATED
 ========================= -->
-  <section class="results fade-section">
-    <ul>
-      <li>Skin hydration and moisture comfort</li>
-      <li>Skin smoothness and texture appearance</li>
-      <li>Skin brightness and overall glow</li>
-      <li>Skin tolerance and irritation response</li>
-      <li>Overall skin condition perception</li>
-    </ul>
+  <section class="clinical-evaluation fade-section">
+
+    <div class="evaluation-card">
+      <img src="assets/icons/hydration.svg" alt="Hydration icon">
+      <h4>Hydration & Moisture Comfort</h4>
+      <p>Skin hydration and moisture comfort</p>
+    </div>
+
+    <div class="evaluation-card">
+      <img src="assets/icons/smoothness.svg" alt="Smoothness icon">
+      <h4>Smoothness & Texture</h4>
+      <p>Skin smoothness and texture appearance</p>
+    </div>
+
+    <div class="evaluation-card">
+      <img src="assets/icons/brightness.svg" alt="Brightness icon">
+      <h4>Brightness & Glow</h4>
+      <p>Skin brightness and overall glow</p>
+    </div>
+
+    <div class="evaluation-card">
+      <img src="assets/icons/tolerance.svg" alt="Tolerance icon">
+      <h4>Tolerance & Comfort</h4>
+      <p>Skin tolerance and irritation response</p>
+    </div>
+
+    <div class="evaluation-card">
+      <img src="assets/icons/overall.svg" alt="Overall condition icon">
+      <h4>Overall Condition</h4>
+      <p>Overall skin condition perception</p>
+    </div>
+
   </section>
+
 
   <!-- =========================
      RESULTS SUMMARY
@@ -170,6 +187,8 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/navbar.js"></script>
+
 </body>
 
 </html>
