@@ -33,6 +33,7 @@ body {
   background-color: var(--white);
   color: var(--text-dark);
   line-height: 1.7;
+  padding-top: 88px;
 }
 
 h1, h2, h3 {
@@ -512,7 +513,9 @@ section {
    RESPONSIVE
    ========================= */
 @media (max-width: 768px) {
-
+  body {
+    padding-top: 72px;
+  }
   .hero-bg { aspect-ratio: 4 / 5; }
 
   .image-text { grid-template-columns: 1fr; }
