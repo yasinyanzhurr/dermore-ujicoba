@@ -18,3 +18,25 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".percent-card strong");
+
+  counters.forEach(counter => {
+    const target = +counter.dataset.count;
+    let current = 0;
+
+    const update = () => {
+      if (current < target) {
+        current++;
+        counter.textContent = current + "%";
+        requestAnimationFrame(update);
+      }
+    };
+
+    update();
+  });
+});
+
