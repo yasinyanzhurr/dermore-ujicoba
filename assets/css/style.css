@@ -429,6 +429,10 @@ section {
     display: none;
    }
 
+   .clinical-evaluation {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -475,6 +479,10 @@ section {
   .closing {
     margin-top: 80px;
     padding-bottom: 80px;
+  }
+
+  .clinical-evaluation {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -578,7 +586,7 @@ section {
     max-width: 1000px;
     margin: 80px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
   
@@ -587,7 +595,8 @@ section {
     padding: 28px 24px;
     border-radius: 16px;
     text-align: center;
-  
+    width: 100%;
+    max-width:none;
     box-shadow: 0 8px 24px rgba(0,0,0,0.04);
   }
   
@@ -612,8 +621,8 @@ section {
   
 
   /* Center last card if odd number */
-.clinical-evaluation > .evaluation-card:last-child {
+/* .clinical-evaluation > .evaluation-card:last-child {
   grid-column: 1 / -1;
   justify-self: center;
   max-width: 320px;
-}
+} */
