@@ -100,6 +100,31 @@ section {
   margin-bottom: 24px;
 }
 
+/* =========================
+   HERO CENTER – FINAL RESET
+   ========================= */
+
+   .hero-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* MATIKAN SISTEM ABSOLUTE */
+  .hero-center .hero-text {
+    position: static;        /* KUNCI UTAMA */
+    transform: none;
+    left: auto;
+    top: auto;
+  
+    margin: 0 auto;
+    text-align: center;
+    max-width: 520px;
+  }
+  
+  
+
+
 .japanese-mark {
   display: block;
   font-family: 'Noto Serif JP', serif;
@@ -169,6 +194,18 @@ section {
   font-size: 32px;
   margin-bottom: 24px;
 }
+
+/* =========================
+   TEXT JUSTIFY (GLOBAL)
+   ========================= */
+
+   .content p,
+   .image-text p,
+   .closing p {
+     text-align: justify;
+     text-justify: inter-word;
+   }
+   
 
 /* =========================
    IMAGE + TEXT
@@ -582,7 +619,7 @@ section {
 /* =========================
    RESPONSIVE
    ========================= */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   body {
     padding-top: 72px;
   }
@@ -601,12 +638,22 @@ section {
   .nav-toggle{
     display: block;
   }
+
+  /* .nav-container {
+    padding: 16px 6%;
+  } */
+
   .nav-menu { 
     gap: 20px;
     display: none;
-   }
+  }
 
-   .clinical-evaluation {
+  /* .nav-mmenu a {
+    font-size: 15px;
+    padding: 4px 10px;
+  } */
+
+  .clinical-evaluation {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -729,30 +776,30 @@ section {
     color: var(--text-muted);
   }
   
-
   .clinical-benefits {
     max-width: 900px;
     margin: 80px auto;
-    display: grid;
+  
+    display: flex;               /* GANTI GRID → FLEX */
+    flex-direction: column;
+    align-items: justify;         /* KUNCI UTAMA */
     gap: 20px;
   }
   
   .benefit-item {
-    display: flex;
+    display: inline-flex;        /* IKUT KONTEN */
     align-items: center;
     gap: 20px;
+  
+    width: 450px;          /* IKUT TEKS TERPANJANG */
+    max-width: 100%;
   
     background: #ffffff;
     padding: 20px 24px;
     border-radius: 14px;
   
+    text-align: justify;
     box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-  }
-  
-  .benefit-item img {
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
   }
   
   .benefit-item p {
@@ -761,6 +808,7 @@ section {
     color: var(--text-dark);
     line-height: 1.6;
   }
+  
   
 
   .clinical-evaluation {
@@ -833,7 +881,7 @@ section {
 
 .percentage-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 4 card = 1 baris */
   gap: 24px;
 }
 
