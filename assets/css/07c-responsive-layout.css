@@ -41,3 +41,22 @@
     }
   }
   
+  /* =========================
+   MOBILE BESAR / SMALL TABLET
+   (≥ 480px)
+   ========================= */
+@media (min-width: 480px) {
+  .product-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   DESKTOP
+   (≥ 1024px)
+   ========================= */
+@media (min-width: 1024px) {
+  .product-highlights {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
