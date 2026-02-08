@@ -493,7 +493,7 @@ section + section {
    ========================= */
 
    .nav-logo img {
-    height: 96px;        /* SESUAI NAVBAR */
+    height: 58px;        /* SESUAI NAVBAR */
     width: auto;
     display: block;
   }
