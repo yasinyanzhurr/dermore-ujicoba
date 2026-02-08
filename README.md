@@ -1,2 +1,2 @@
-# dermore-ujicoba
+# Dermoree-ujicoba
 website skincare uji coba
