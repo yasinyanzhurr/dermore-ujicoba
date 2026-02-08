@@ -1,0 +1,98 @@
+/* ======================================================
+   RESPONSIVE – NAVBAR
+   ====================================================== */
+
+/* =========================
+   MOBILE (≤ 768px)
+   ========================= */
+   @media (max-width: 768px) {
+
+    body {
+      padding-top: 56px;              /* Offset tinggi navbar mobile */
+    }
+  
+    .navbar {
+      height: 56px;                   /* Tinggi navbar mobile */
+    }
+  
+    .nav-container {
+      height: 56px;                   /* Samakan tinggi container */
+      padding: 0 16px;                /* Padding horizontal kecil */
+      justify-content: center;         /* Logo center */
+      align-items: center;             /* Vertical center */
+      position: relative;              /* Acuan absolute child */
+    }
+  
+    .nav-logo {
+      position: absolute;              /* Center absolut */
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 0;                  /* Hilangkan whitespace */
+    }
+  
+    .nav-logo img {
+      height: 96px;                    /* Logo tetap besar */
+    }
+  
+    .nav-toggle {
+      display: block;                  /* Hamburger muncul */
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
+    }
+  
+    .nav-menu {
+      display: none;                   /* Menu desktop mati */
+    }
+  }
+  
+  /* =========================
+     TABLET (769px – 1024px)
+     ========================= */
+  @media (min-width: 769px) and (max-width: 1024px) {
+  
+    body {
+      padding-top: 72px;               /* Offset navbar tablet */
+    }
+  
+    .navbar {
+      height: 72px;                    /* Tinggi navbar tablet */
+    }
+  
+    .nav-container {
+      height: 72px;
+      padding: 0 24px;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+  
+    .nav-logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 0;
+    }
+  
+    .nav-logo img {
+      height: 96px;                    /* Logo tetap dominan */
+    }
+  
+    .nav-toggle {
+      display: block;                  /* Hamburger aktif */
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
+    }
+  
+    .nav-menu {
+      display: none;                   /* Menu desktop mati */
+    }
+  }
+  

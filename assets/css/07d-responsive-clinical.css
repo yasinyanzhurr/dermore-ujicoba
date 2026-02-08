@@ -1,0 +1,54 @@
+/* ======================================================
+   RESPONSIVE – CLINICAL & INGREDIENT
+   ====================================================== */
+
+/* =========================
+   MOBILE (≤ 768px)
+   ========================= */
+   @media (max-width: 768px) {
+
+    .ingredient-inner {
+      grid-template-columns: 1fr;      /* Stack jadi satu kolom */
+      text-align: center;              /* Center teks */
+    }
+  
+    .ingredient-inner img,
+    .ingredient-inner .ingredient-text {
+      grid-column: auto;               /* Reset grid column */
+      margin: 0 auto;                  /* Center horizontal */
+    }
+  
+    .benefit-item {
+      padding: 18px;                   /* Padding lebih rapat */
+      gap: 16px;                       /* Jarak elemen */
+    }
+  
+    .benefit-item p {
+      font-size: 14px;                 /* Teks lebih kecil */
+    }
+  
+    .evaluation-card {
+      padding: 24px 20px;
+    }
+  }
+  
+  /* =========================
+     TABLET (769px – 1024px)
+     ========================= */
+  @media (min-width: 769px) and (max-width: 1024px) {
+  
+    .clinical-evaluation {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolom tablet */
+    }
+  }
+  
+  /* =========================
+     SMALL MOBILE (≤ 600px)
+     ========================= */
+  @media (max-width: 600px) {
+  
+    .clinical-evaluation {
+      grid-template-columns: 1fr;      /* 1 kolom di layar kecil */
+    }
+  }
+  

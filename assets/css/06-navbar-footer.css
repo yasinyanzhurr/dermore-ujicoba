@@ -1,0 +1,383 @@
+/* =========================
+   NAVBAR (BASE + SK-II)
+   ========================= */
+
+/* Wrapper navbar utama (fixed di atas) */
+.navbar {
+    position: fixed;                     /* Navbar selalu terlihat */
+    top: 0;
+    left: 0;
+    width: 100%;                         /* Full width viewport */
+    z-index: 1000;                       /* Di atas konten lain */
+    background: var(--nav-bg);           /* Background navbar */
+    border-bottom: 1px solid rgba(107, 143, 113, 0.35); /* Garis pemisah lembut */
+    backdrop-filter: blur(6px);          /* Efek blur glassy */
+    /* border-bottom: 1px solid #e5e7eb; */ /* Alternatif border (disimpan) */
+  }
+  
+  /* Garis aksen halus di bawah navbar */
+  .navbar::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--leaf-green),
+      transparent
+    );                                   /* Aksen brand di tengah */
+  }
+  
+  
+  /* =========================
+     NAV CONTAINER
+     ========================= */
+  
+  /* Container isi navbar */
+  .nav-container {
+    max-width: 1200px;                   /* Batas lebar konten */
+    margin: auto;                        /* Center horizontal */
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: flex;                       /* Flex layout */
+    justify-content: space-between;      /* Logo kiri, menu kanan */
+    align-items: center;                 /* Vertikal sejajar */
+    position: relative;                  /* Referensi untuk absolute child */
+  }
+  
+  
+  /* =========================
+     LOGO
+     ========================= */
+  
+  /* Teks / link logo */
+  .nav-logo {
+    font-family: 'Playfair Display', serif; /* Font premium */
+    font-size: 26px;
+    letter-spacing: 2px;                    /* Spasi huruf khas brand */
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;                  /* Hilangkan underline */
+  }
+  
+  /* Gambar logo */
+  .nav-logo img {
+    height: 58px;                         /* Tinggi sesuai navbar */
+    width: auto;
+    display: block;
+  }
+  
+  
+  /* =========================
+     DESKTOP MENU
+     ========================= */
+  
+  /* List menu utama */
+  .nav-menu {
+    list-style: none;                    /* Hilangkan bullet */
+    display: flex;                       /* Horizontal menu */
+    gap: 40px;                           /* Jarak antar item */
+  }
+  
+  /* Link menu */
+  .nav-menu a {
+    text-decoration: none;
+    font-size: 18px;                     /* Lebih besar & jelas */
+    font-weight: 400;
+    letter-spacing: 0.4px;               /* Tidak kaku */
+    color: var(--text-dark);
+    position: relative;                  /* Untuk pseudo-element */
+    padding: 6px 14px;                   /* Area klik nyaman */
+    border-radius: 999px;                /* Pill shape */
+    transition:
+      background-color 0.3s ease,
+      color 0,3s ease;                   /* Animasi hover */
+  }
+  
+  /* Hover menu */
+  .nav-menu a:hover {
+    background-color: rgba(107, 143, 113, 0.12); /* Hijau lembut */
+    color: var(--leaf-green);
+  }
+  
+  /* Indicator menu aktif (underline) */
+  .nav-menu a.active::after {
+    content: "";
+    display: block;
+    margin-top: 8px;
+    height: 2px;
+    width: 24px;
+    background-color: var(--leaf-green);
+  }
+  
+  
+  /* =========================
+     MOBILE DRAWER
+     ========================= */
+  
+  /* Overlay menu mobile */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;                            /* Top, right, bottom, left = 0 */
+    background: #ffffff;
+    z-index: 2000;                       /* Di atas navbar */
+    font-family: 'DM Sans', sans-serif;  /* Font khusus mobile */
+    opacity: 0;                          /* Awal tersembunyi */
+    visibility: hidden;
+    pointer-events: none;                /* Tidak bisa diklik */
+  
+    transition: opacity 0.3s ease;       /* Animasi muncul */
+  }
+  
+  /* Menu mobile aktif */
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  
+  /* =========================
+     MOBILE NAV LINKS
+     ========================= */
+  
+  /* Link menu mobile */
+  .mobile-nav a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    display: block;
+    padding: 14px 8px;
+    border-radius: 12px;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+  
+  /* Hover link mobile */
+  .mobile-nav a:hover {
+    background-color: rgba(107, 143, 113, 0.12);
+    color: var(--leaf-green);
+  }
+  
+  
+  /* =========================
+     MOBILE HEADER
+     ========================= */
+  
+  /* Judul/logo di header mobile */
+  .mobile-header span {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    position: relative;
+    padding: 20px 24px;
+    border-bottom: 1px solid #eee;
+    display: block;
+    text-align: center;
+  }
+  
+  /* Container header mobile */
+  .mobile-header {
+    height: 120px;
+    position: relative;                /* Kunci positioning close button */
+    padding: 0px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  /* =========================
+     MOBILE LOGO
+     ========================= */
+  
+  /* Wrapper logo agar benar-benar center */
+  .mobile-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Logo di drawer mobile */
+  .mobile-logo img {
+    height: 18px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  /* =========================
+     NAV TOGGLE & CLOSE
+     ========================= */
+  
+  /* Tombol hamburger */
+  .nav-toggle {
+    display: none;                     /* Muncul via media query */
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+  
+  /* Tombol close mobile menu */
+  .close-menu {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  
+    width: 36px;
+    height: 36px;
+  
+    font-size: 24px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    transition: background-color 0.2s ease;
+  }
+  
+  
+  /* =========================
+     FOOTER FIX (FINAL)
+     ========================= */
+  
+  /* Wrapper footer */
+  .footer {
+    width: 100%;
+    background: var(--footer-bg);
+    border-top: 1px solid rgba(107, 143, 113, 0.35);
+    margin-top: 80px;
+  
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Garis aksen atas footer */
+  .footer::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: var(--leaf-green);
+    opacity: 0.6;
+  }
+  
+  
+  /* Container footer */
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 10%;
+    text-align: center;
+  }
+  
+  /* Teks footer */
+  .footer p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  
+  /* Link footer */
+  .footer a {
+    color: var(--leaf-green);
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    color: var(--gold-accent);
+  }
+  
+  /* Footer main text */
+  .footer-main {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  
+  /* Footer innovation text */
+  .footer-innovation {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+  }
+  
+  .footer-innovation strong {
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+  
+  /* Social link */
+  .footer-social {
+    font-size: 13px;
+  }
+  
+  .footer-social a {
+    color: var(--text-dark);
+    text-decoration: none;
+  }
+  
+  .footer-social a:hover {
+    color: var(--leaf-green);
+  }
+  
+  
+  /* =========================
+     MOBILE NAV STYLE (FIX)
+     ========================= */
+  
+  /* List menu mobile */
+  .mobile-nav {
+    list-style: none;
+    padding: 20px;
+  }
+  
+  /* Item menu mobile */
+  .mobile-nav li {
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Link menu mobile (override) */
+  .mobile-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 16px;
+  }
+  
+  
+  /* =========================
+     ACTIVE NAV
+     ========================= */
+  
+  /* Menu aktif (desktop) */
+  .nav-menu a.active {
+    color: var(--leaf-green);
+    font-weight: 500;
+  }
+  
+  /* Underline menu aktif */
+  .nav-menu a.active::after {
+    content: "";
+    display: block;
+    margin-top: 6px;
+    height: 2px;
+    background-color: var(--leaf-green);
+  }
+  

@@ -1,0 +1,64 @@
+/* =========================
+   IMPORT & VARIABLES
+   ========================= */ 
+/* Judul section: menandai bahwa bagian ini khusus untuk import font dan CSS variables global */
+
+/* Import Google Font: Playfair Display (serif elegan) + Inter (sans modern) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+/* 
+   - Playfair Display: dipakai untuk heading (kesan premium, editorial)
+   - Inter: dipakai untuk body text (mudah dibaca, modern)
+   - wght: hanya weight yang dipakai agar font lebih ringan (performant)
+*/
+
+/* Import Google Font: DM Sans */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+/*
+   - DM Sans: digunakan khusus untuk navigasi & mobile menu
+   - Memberi kontras visual dengan Inter & Playfair
+*/
+
+/* :root = scope global untuk CSS variables */
+:root {
+  /* Warna putih utama (lebih lembut dari #ffffff) */
+  --white: #FAFAFA;
+
+  /* Warna pink lembut untuk aksen feminin / skincare */
+  --soft-pink: #F3C6CF;
+
+  /* Warna hijau natural → identitas utama brand */
+  --leaf-green: #6B8F71;
+
+  /* Warna emas → aksen premium / highlight */
+  --gold-accent: #C9A24D;
+
+  /* Warna teks utama (lebih lembut dari hitam murni) */
+  --text-dark: #1F2933;
+
+  /* Warna teks sekunder / deskripsi */
+  --text-muted: #6B7280;
+
+  /* Background navbar (netral & clean) */
+  --nav-bg: #F6F7F4;
+
+  /* Background footer (disamakan dengan navbar untuk konsistensi) */
+  --footer-bg: #F6F7F4;
+
+  /* --page-max-width: 1400px;     batas visual utama */
+  /* --page-gutter: 24px;          napas kiri-kanan default */
+
+   /* =========================
+      GLOBAL WIDTH & GUTTER SYSTEM
+      ========================= */
+ 
+   --page-max-width: 1400px;
+ 
+   /*
+     Gutter responsif:
+     - Mobile kecil  : ±20–24px
+     - Tablet        : ±32px
+     - Desktop       : ±48px
+   */
+   --page-gutter: clamp(60px, 20vw, 60px);
+ }
+

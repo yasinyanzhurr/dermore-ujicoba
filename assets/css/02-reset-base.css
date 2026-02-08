@@ -1,0 +1,49 @@
+/* =========================
+   RESET & BASE
+   ========================= */
+
+/* Reset default browser spacing & model box */
+* {
+    margin: 0;                 /* Hilangkan margin bawaan browser */
+    padding: 0;                /* Hilangkan padding bawaan browser */
+    box-sizing: border-box;    /* Width/height termasuk padding & border */
+  }
+  
+  /* Styling dasar untuk seluruh halaman */
+  body {
+    font-family: 'Inter', sans-serif; /* Font utama untuk body text */
+    background-color: var(--white);   /* Warna latar global */
+    color: var(--text-dark);          /* Warna teks utama */
+    line-height: 1.7;                 /* Jarak antar baris (nyaman dibaca) */
+    padding-top: 88px;                /* Ruang untuk navbar fixed */
+  }
+  
+  /* Heading global (judul) */
+  h1,
+  h2,
+  h3 {
+    font-family: 'Playfair Display', serif; /* Font serif untuk kesan premium */
+    font-weight: 600;                       /* Tebal sedang agar elegan */
+    letter-spacing: 0.5px;                 /* Spasi huruf agar tidak kaku */
+  }
+  
+  /* Paragraf global */
+  p {
+    font-size: 16px;             /* Ukuran teks standar body */
+    color: var(--text-muted);    /* Warna teks sekunder (tidak terlalu gelap) */
+  }
+  
+  /* =========================
+     GLOBAL LAYOUT
+     ========================= */
+  
+  /* Spasi default setiap section */
+  section {
+    padding: 48px 10%;           /* Atas-bawah 48px, kiri-kanan responsif */
+  }
+  
+  /* Section setelah section pertama */
+  section + section {
+    padding-top: 32px;           /* Jarak antar section agar tidak terlalu padat */
+  }
+  

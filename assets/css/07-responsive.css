@@ -1,0 +1,61 @@
+/* ======================================================
+   Dermoree – RESPONSIVE GLOBAL
+   Entry point & global behavior only
+   ====================================================== */
+
+/* =========================
+   RESPONSIVE MODULE IMPORT
+   ========================= */
+   @import "07a-responsive-hero.css";
+   @import "07b-responsive-navbar.css";
+   @import "07c-responsive-layout.css";
+   @import "07d-responsive-clinical.css";
+   
+   /* =========================
+      MOBILE & SMALL DEVICES
+      (≤ 768px)
+      ========================= */
+   @media (max-width: 768px) {
+   
+     html,
+     body {
+       overflow-x: hidden; /* Cegah scroll horizontal global */
+     }
+   
+     input,
+     textarea,
+     select {
+       font-size: 16px; /* Cegah auto-zoom iOS */
+     }
+   }
+   
+   /* =========================
+      SMALL MOBILE
+      (≤ 600px)
+      ========================= */
+   @media (max-width: 600px) {
+   
+     body {
+       font-size: 15px; /* Kepadatan teks lebih nyaman */
+     }
+   
+     section {
+       scroll-margin-top: 64px; /* Offset anchor / scroll target */
+     }
+   
+     h1 {
+       font-size: clamp(1.8rem, 6vw, 2.2rem); /* Judul aman layar kecil */
+     }
+   }
+   
+   /* =========================
+      ACCESSIBILITY
+      ========================= */
+   @media (prefers-reduced-motion: reduce) {
+   
+     * {
+       animation: none !important;   /* Matikan animasi */
+       transition: none !important;  /* Matikan transisi */
+     }
+   }
+   

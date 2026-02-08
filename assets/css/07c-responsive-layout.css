@@ -1,0 +1,43 @@
+/* ======================================================
+   RESPONSIVE – GLOBAL LAYOUT & CONTENT
+   ====================================================== */
+
+/* =========================
+   SMALL MOBILE (≤ 600px)
+   ========================= */
+   @media (max-width: 600px) {
+
+    section {
+      padding: 32px 6%;                /* Padding lebih sempit */
+    }
+  
+    .image-text {
+      margin: 64px 0;                  /* Jarak antar blok */
+    }
+  
+    .closing {
+      margin-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+  
+  /* =========================
+     MOBILE (≤ 768px)
+     ========================= */
+  @media (max-width: 768px) {
+  
+    section {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  
+    .image-text {
+      margin: 48px 0;
+    }
+  
+    .content {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+  

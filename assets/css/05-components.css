@@ -1,0 +1,448 @@
+/* =========================
+   INGREDIENT ALIGNMENT FIX
+   (ADD-ON, STABLE VERSION)
+   ========================= */
+
+/* Wrapper utama untuk item ingredient */
+.ingredient-item .ingredient-inner {
+    max-width: 1100px;              /* Batas lebar agar konten tidak melebar */
+    margin: 0 auto;                 /* Center secara horizontal */
+  
+    display: grid;                  /* Grid untuk alignment presisi */
+    grid-template-columns: 1fr 1fr; /* Dua kolom: image + text */
+    align-items: center;            /* Vertikal sejajar */
+    gap: 48px;                      /* Jarak antar kolom */
+  }
+  
+  /* Pastikan sistem image-text lama tidak bentrok */
+  .ingredient-item.image-text {
+    display: block;                 /* Matikan grid lama */
+  }
+  
+  /* =========================
+     IMAGE
+     ========================= */
+  
+  /* Gambar ingredient */
+  .ingredient-inner img {
+    width: 100%;                    /* Responsif */
+    max-width: 420px;               /* Batas maksimal gambar */
+  }
+  
+  /* =========================
+     TEXT
+     ========================= */
+  
+  /* Container teks ingredient */
+  .ingredient-text {
+    max-width: 520px;               /* Kontrol lebar teks agar nyaman dibaca */
+  }
+  
+  /* =========================
+     SELANG-SELING LAYOUT
+     ========================= */
+  
+  /* Default: gambar kiri, teks kanan */
+  .ingredient-inner img {
+    grid-column: 1;
+  }
+  
+  .ingredient-inner .ingredient-text {
+    grid-column: 2;
+  }
+  
+  /* Reverse: teks kiri, gambar kanan */
+  .ingredient-inner.right img {
+    grid-column: 2;
+  }
+  
+  .ingredient-inner.right .ingredient-text {
+    grid-column: 1;
+  }
+  
+  
+  /* =========================
+     PRODUCT HIGHLIGHTS
+     ========================= */
+  
+  /* Grid highlight produk */
+  .product-highlights {
+    display: grid;                                   /* Grid responsif */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;                                       /* Jarak antar card */
+    max-width: 900px;                                /* Lebar maksimum */
+    margin: 80px auto;                               /* Center + jarak vertikal */
+  }
+  
+  /* Card highlight */
+  .highlight-card {
+    background: #ffffff;                             /* Latar putih */
+    border-radius: 16px;                             /* Sudut lembut */
+    padding: 32px 24px;                              /* Ruang dalam */
+    text-align: center;                              /* Konten rata tengah */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);         /* Shadow halus */
+  }
+  
+  /* Icon highlight */
+  .highlight-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+  
+  /* Judul highlight */
+  .highlight-card h4 {
+    font-family: 'Playfair Display', serif;           /* Konsisten dengan heading */
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+  
+  /* Deskripsi highlight */
+  .highlight-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  
+  
+  /* =========================
+     CLINICAL BENEFITS
+     ========================= */
+  
+  /* Wrapper benefit klinis */
+  .clinical-benefits {
+    max-width: 900px;
+    margin: 80px auto;
+  
+    display: flex;               /* Menggunakan flex */
+    flex-direction: column;      /* Stack vertikal */
+    align-items: justify;        /* Menyesuaikan isi */
+    gap: 20px;                   /* Jarak antar item */
+  }
+  
+  /* Item benefit */
+  .benefit-item {
+    display: inline-flex;        /* Ukuran mengikuti konten */
+    align-items: center;
+    gap: 20px;
+  
+    width: 450px;                /* Mengikuti teks terpanjang */
+    max-width: 100%;
+  
+    background: #ffffff;
+    padding: 20px 24px;
+    border-radius: 14px;
+  
+    text-align: justify;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  
+  /* Teks benefit */
+  .benefit-item p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+  
+  
+  /* =========================
+     CLINICAL EVALUATION
+     ========================= */
+  
+  /* Grid evaluasi klinis */
+  .clinical-evaluation {
+    max-width: 1000px;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 24px;
+  }
+  
+  /* Card evaluasi */
+  .evaluation-card {
+    background: #ffffff;
+    padding: 28px 24px;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+    max-width: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  }
+  
+  /* Icon evaluasi */
+  .evaluation-card img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 16px;
+  }
+  
+  /* Judul evaluasi */
+  .evaluation-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+  
+  /* Deskripsi evaluasi */
+  .evaluation-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  
+  
+  /* =========================
+     CLINICAL VISUAL
+     ========================= */
+  
+  /* Wrapper visual klinis */
+  .clinical-visual {
+    max-width: 1000px;
+    margin: 120px auto;
+    text-align: center;
+  }
+  
+  /* Intro section visual */
+  .section-intro {
+    max-width: 600px;
+    margin: 0 auto 64px;
+    color: var(--text-muted);
+  }
+  
+  /* Block chart */
+  .chart-block {
+    margin-bottom: 80px;
+  }
+  
+  /* Judul chart */
+  .chart-block h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 24px;
+  }
+  
+  
+  /* =========================
+     PERCENTAGE GRID
+     ========================= */
+  
+  /* Grid persentase */
+  .percentage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 card per baris */
+    gap: 24px;
+  }
+  
+  /* Card persentase */
+  .percent-card {
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  }
+  
+  /* Angka persentase */
+  .percent-card strong {
+    font-size: 32px;
+    color: var(--leaf-green);
+    display: block;
+  }
+  
+  /* Label persentase */
+  .percent-card span {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  
+  
+  /* =========================
+     TIMELINE
+     ========================= */
+  
+  /* Container timeline */
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  
+  /* Step timeline */
+  .timeline-step {
+    background: #fff;
+    padding: 24px;
+    border-radius: 14px;
+    flex: 1;
+  }
+  
+  /* Highlight angka timeline */
+  .timeline-step span {
+    font-weight: 600;
+    color: var(--leaf-green);
+  }
+  
+  
+  /* =========================
+     LINE CHART
+     ========================= */
+  
+  /* Container line chart */
+  .line-chart {
+    max-width: 800px;
+    margin: 40px auto;
+  }
+  
+  /* Label sumbu chart */
+  .chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  
+  /* Area chart */
+  .chart-area {
+    position: relative;
+    height: 160px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  /* Garis chart */
+  .line {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 0;
+    border-radius: 4px;
+    transition: width 1.2s ease;
+  }
+  
+  /* Variant garis */
+  .line.hydration {
+    top: 30px;
+    background: var(--leaf-green);
+  }
+  
+  .line.smoothness {
+    top: 75px;
+    background: var(--gold-accent);
+  }
+  
+  .line.overall {
+    top: 120px;
+    background: #9FB3A1;
+  }
+  
+  /* Animasi saat visible */
+  .clinical-visual.show .line.hydration { width: 85%; }
+  .clinical-visual.show .line.smoothness { width: 72%; }
+  .clinical-visual.show .line.overall { width: 78%; }
+  
+  
+  /* =========================
+     BAR CHART
+     ========================= */
+  
+  /* Bar dasar */
+  .bar {
+    width: 16px;
+    height: 0;
+    border-radius: 6px;
+    transition: height 1s ease;
+  }
+  
+  .bar.before {
+    background: #e5e7eb;
+  }
+  
+  .bar.after {
+    background: var(--leaf-green);
+  }
+  
+  /* Wrapper bar chart */
+  .bar-chart {
+    max-width: 700px;
+    margin: 40px auto;
+    display: grid;
+    gap: 24px;
+  }
+  
+  /* Bar row */
+  .bar-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+  }
+  
+  /* Container bar */
+  .bars {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    height: 100px;
+  }
+  
+  /* Override ukuran bar */
+  .bar {
+    width: 22px;
+    height: 0;
+    border-radius: 8px;
+    transition: height 1s ease;
+  }
+  
+  /* Animasi bar */
+  .clinical-visual.show .bar.before { height: 40px; }
+  .clinical-visual.show .bar.after { height: 90px; }
+  
+  
+  /* =========================
+     TIMELINE ANIMATION
+     ========================= */
+  
+  /* State awal timeline */
+  .timeline-step {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+  
+  /* State aktif */
+  .clinical-visual.show .timeline-step {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Delay bertahap */
+  .clinical-visual.show .timeline-step:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  
+  .clinical-visual.show .timeline-step:nth-child(3) {
+    transition-delay: 0.4s;
+  }
+  
+  
+  /* =========================
+     INNOVATION CREDIT
+     ========================= */
+  
+  /* Credit section */
+  .innovation-credit {
+    text-align: center;
+    margin: 60px auto 20px;
+  }
+  
+  /* Teks credit */
+  .innovation-credit p {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+  }
+  
+  /* Highlight nama */
+  .innovation-credit strong {
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+  

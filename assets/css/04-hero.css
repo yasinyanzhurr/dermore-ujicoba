@@ -1,0 +1,180 @@
+/* =========================
+   HERO BASE – REFINED SYSTEM
+   ========================= */
+
+/* Container utama hero */
+.hero {
+    position: relative;              /* Dibutuhkan untuk overlay (::before) */
+    width: calc(100% - 32px); /* napas kiri-kanan */                     /* Hero selalu full width */
+    /* max-width: var(--page-max-width);                 Mencegah pembatasan lebar */
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter); */
+  
+    margin-top: 24px;
+    margin-bottom: 32px;
+    border-radius: 32px;            /* Sudut besar, kesan premium */
+    overflow: hidden;                /* Potong overflow (overlay & image) */
+    box-sizing: border-box;          /* Konsistensi ukuran */
+  
+    display: flex;                   /* Flex untuk center konten */
+    align-items: center;             /* Center vertikal */
+    justify-content: center;         /* Center horizontal */
+  
+    /* SMART HEIGHT */
+    min-height: clamp(260px, 50vh, 420px);
+    /* 
+       - Minimum: 260px (mobile aman)
+       - Ideal: 50vh (adaptif viewport)
+       - Maksimum: 420px (tidak terlalu tinggi di desktop)
+    */
+  }
+  
+  
+  /* =========================
+     HERO BACKGROUND
+     ========================= */
+  
+  /* Elemen background hero (biasanya via class variant) */
+  .hero-bg {
+    background-size: cover;          /* Gambar memenuhi area tanpa distorsi */
+    background-position: center;     /* Fokus di tengah gambar */
+    background-repeat: no-repeat;    /* Hindari pengulangan */
+    aspect-ratio: auto;              /* Dimatikan agar tidak konflik tinggi hero */
+  }
+  
+  
+  /* =========================
+     OVERLAY
+     ========================= */
+  
+  /* Overlay gelap lembut untuk kontras teks */
+  .hero::before {
+    content: "";                     /* Elemen pseudo wajib punya content */
+    position: absolute;              /* Menumpuk di atas background */
+    inset: 0;                        /* Top, right, bottom, left = 0 */
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    );                                /* Gelap merata (tidak dramatis) */
+    z-index: 1;                      /* Di bawah teks, di atas background */
+  }
+  
+  
+  /* =========================
+     HERO TEXT (CENTERED)
+     ========================= */
+  
+  /* Card teks di tengah hero */
+  .hero-text {
+    position: relative;              /* Agar berada di atas overlay */
+    z-index: 2;                      /* Pastikan di layer paling atas */
+  
+    max-width: 720px;                /* Batas lebar teks agar mudah dibaca */
+    padding: 24px;                   /* Ruang dalam card */
+    text-align: center;              /* Rata tengah untuk hero */
+  
+    /* CARD TRANSLUCENT */
+    background: rgba(255, 255, 255, 0.15); /* Transparan lembut */
+    backdrop-filter: blur(6px);      /* Efek glassmorphism */
+    -webkit-backdrop-filter: blur(6px); /* Support Safari */
+  
+    border-radius: 18px;             /* Sudut card lembut */
+  }
+  
+  
+  /* =========================
+     TYPOGRAPHY
+     ========================= */
+  
+  /* Judul hero */
+  .hero-text h1 {
+    font-family: 'Noto Serif JP', serif; /* Serif elegan, editorial feel */
+    font-size: clamp(2rem, 4vw, 3rem);  /* Responsif dari mobile ke desktop */
+    font-weight: 500;                   /* Tidak terlalu bold */
+    line-height: 1.25;                  /* Padat & tegas */
+    margin-bottom: 16px;                /* Jarak ke deskripsi */
+    color: #fff;                        /* Putih solid untuk kontras */
+  }
+  
+  /* Deskripsi hero */
+  .hero-text p {
+    font-size: clamp(1rem, 2vw, 1.15rem); /* Lebih kecil dari judul */
+    line-height: 1.6;                     /* Nyaman dibaca */
+    margin-bottom: 24px;                  /* Jarak ke CTA */
+    color: rgba(255, 255, 255, 0.95);     /* Putih lembut (tidak silau) */
+  }
+  
+  
+  /* =========================
+     CTA
+     ========================= */
+  
+  /* CTA di dalam hero */
+  .hero .cta-button {
+    margin-top: 16px;               /* Jarak tambahan dari teks */
+  }
+  
+  
+  /* =========================
+     HERO CENTER (SAFE)
+     ========================= */
+  
+  /* Utility class jika butuh force center */
+  .hero-center {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  /* =========================
+     HERO VARIANTS
+     ========================= */
+  
+  /* Variant background untuk halaman produk */
+  .hero-product {
+    background-image: url('../images/product/product-main.jpeg');
+  }
+  
+  /* Variant background halaman ingredients */
+  .hero-ingredients {
+    background-image: url('../images/ingredients.png');
+  }
+  
+  /* Variant background halaman clinical */
+  .hero-clinical {
+    background-image: url('../images/science/lab-2.png');
+  }
+  
+  /* Variant background halaman our story */
+  .hero-ourstory {
+    background-image: url('../images/ourstory.png');
+  }
+  
+  
+  /* =========================
+     HERO OPENING SCENE (FINAL)
+     ========================= */
+  
+  /* Hero pertama (above the fold) */
+  .hero:first-of-type {
+    min-height: 83svh;              /* Tinggi viewport modern (mobile safe) */
+    max-height: 83svh;              /* Konsisten, tidak melonjak */
+  
+    
+    margin-top: 16px;                  /* Tidak ada jarak atas */
+    margin-bottom: 0;               /* Menyatu dengan section berikutnya */
+    border-radius: 32px;            /* Tetap rounded */
+  
+    display: flex;                  /* Pastikan center */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Section setelah hero pertama */
+  .hero:first-of-type + section {
+    margin-top: 0;                  /* Tidak ada jarak ekstra */
+    padding-top: 120px;             /* Ruang napas setelah hero */
+  }
+  

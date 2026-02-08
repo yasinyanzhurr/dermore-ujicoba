@@ -1,0 +1,112 @@
+/* ======================================================
+   RESPONSIVE – HERO
+   ====================================================== */
+
+/* =========================
+   SMALL MOBILE (≤ 600px)
+   ========================= */
+   @media (max-width: 600px) {
+
+    .hero {
+      margin-bottom: 72px;            /* Jarak bawah agar tidak mepet konten */
+    }
+  }
+  
+  /* =========================
+     MOBILE (≤ 768px)
+     ========================= */
+  @media (max-width: 768px) {
+  
+    .hero {
+      min-height: 260px;              /* Tinggi minimum hero di mobile */
+      border-radius: 22px;            /* Radius lebih kecil untuk layar kecil */
+      width: calc(100% - 32px);       /* Hindari mentok kiri-kanan */
+      margin: 20px auto;              /* Center horizontal + jarak vertikal */
+    }
+  
+    .hero-text {
+      padding: 16px;                  /* Padding lebih rapat di mobile */
+    }
+  
+    .hero:first-of-type {
+      min-height: 90svh;              /* Hero opening lebih tinggi */
+      max-height: 90svh;              /* Batasi agar tidak overflow */
+      border-radius: 22px;            /* Konsisten dengan hero biasa */
+    }
+  
+    .hero:first-of-type + section {
+      padding-top: 80px;              /* Jarak aman setelah hero opening */
+    }
+  }
+  
+  /* =========================
+     TABLET (769px – 1024px)
+     ========================= */
+  @media (min-width: 769px) and (max-width: 1024px) {
+  
+    .hero {
+      min-height: 360px;              /* Tinggi stabil tablet */
+      max-height: 360px;              /* Kunci tinggi agar konsisten */
+      margin: 24px auto;              /* Center hero */
+      border-radius: 28px;            /* Radius transisi tablet */
+      width: calc(100% - 50px);
+    }
+  
+    .hero-bg {
+      aspect-ratio: 4 / 5;            /* Rasio portrait-friendly tablet */
+    }
+  
+    .hero-text {
+      padding: 24px;                  /* Padding lebih lega */
+      max-width: 90%;                 /* Lebar teks final tablet */
+    }
+  
+    .hero-text h1 {
+      font-size: 28px;                /* Ukuran judul FINAL tablet */
+    }
+  
+    .hero-text p {
+      font-size: 15px;                /* Ukuran paragraf tablet */
+    }
+  
+    .hero:first-of-type {
+      min-height: 85svh;              /* Hero opening tablet */
+      max-height: 85svh;              /* Batas tinggi */
+      margin-top: 24px;
+
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      width: calc(100% - 64px);
+      margin-top: 24px;
+    }
+
+    .hero:first-of-type {
+      margin-top: 2px;
+    }
+  }
+  
+  
+  /* =========================
+     LARGE DESKTOP (≥ 1400px)
+     ========================= */
+  @media (min-width: 1400px) {
+  
+    .hero-bg {
+      max-width: 1400px;              /* Batasi agar tidak terlalu melebar */
+      margin: 0 auto;                 /* Center di layar besar */
+    }
+  
+    .hero-clinical {
+      justify-content: flex-start;    /* Konten condong ke kiri */
+      padding-left: 8%;               /* Ruang napas kiri */
+    }
+  
+    .hero-clinical .hero-text {
+      max-width: 820px;               /* Lebar teks nyaman dibaca */
+      text-align: left;               /* Align kiri untuk kesan editorial */
+    }
+  }
+  

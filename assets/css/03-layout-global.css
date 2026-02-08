@@ -1,0 +1,193 @@
+/* =========================
+   GLOBAL LAYOUT
+   ========================= */
+
+/* Spasi default untuk setiap section halaman */
+section {
+  max-width: var(--page-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 48px var(--page-gutter);
+}
+
+  
+  /* Section yang muncul setelah section sebelumnya */
+  section + section {
+    padding-top: 32px;           /* Jarak antar section agar tidak terlalu rapat */
+  }
+  
+  
+  /* =========================
+     GLOBAL LAYOUT FIX
+     ========================= */
+  
+  /* Mencegah horizontal scroll akibat elemen melebar */
+  html,
+  body {
+    width: 100%;                 /* Pastikan lebar mengikuti viewport */
+    overflow-x: hidden;          /* Kunci scroll horizontal */
+  }
+  
+  
+  /* =========================
+     CONTENT BLOCK
+     ========================= */
+  
+  /* Wrapper konten utama (artikel / teks panjang) */
+  .content {
+    max-width: 900px;            /* Lebar maksimum agar teks nyaman dibaca */
+    margin: auto;                /* Center secara horizontal */
+    text-align: center;          /* Judul & elemen default rata tengah */
+    padding-top: 48px;           /* Jarak atas konten */
+    padding-bottom: 48px;        /* Jarak bawah konten */
+  }
+  
+  /* Judul section di dalam content */
+  .content h2 {
+    font-size: 32px;             /* Ukuran heading besar & tegas */
+    margin-bottom: 24px;         /* Jarak ke paragraf berikutnya */
+  }
+  
+  
+  /* =========================
+     TEXT JUSTIFY (GLOBAL)
+     ========================= */
+  
+  /* Paragraf panjang dibuat rata kiri–kanan agar tampak rapi */
+  .content p,
+  .image-text p,
+  .closing p {
+    text-align: justify;         /* Rata kiri–kanan */
+    text-justify: inter-word;    /* Spasi antar kata lebih natural */
+  }
+  
+  
+  /* =========================
+     IMAGE + TEXT
+     ========================= */
+  
+  /* Layout dua kolom: gambar + teks */
+  .image-text {
+    display: grid;               /* Gunakan grid untuk alignment stabil */
+    grid-template-columns: 1fr 1fr; /* Dua kolom seimbang */
+    gap: 40px;                   /* Jarak antar kolom */
+    align-items: center;         /* Vertikal align tengah */
+    margin: 56px 0;              /* Jarak atas & bawah block */
+  }
+  
+  /* Gambar pada block image-text */
+  .image-text img {
+    width: 100%;                 /* Responsif mengikuti container */
+    max-width: 420px;            /* Batas maksimal agar tidak terlalu besar */
+    border-radius: 12px;         /* Sudut lembut */
+    justify-self: center;        /* Center di dalam grid */
+  }
+  
+  /* Subjudul pada block image-text */
+  .image-text h3 {
+    font-size: 28px;             /* Lebih kecil dari h2, tetap dominan */
+    margin-bottom: 16px;         /* Jarak ke paragraf */
+  }
+  
+  /* Paragraf pada block image-text */
+  .image-text p {
+    font-size: 16.5px;           /* Sedikit lebih besar dari body default */
+    line-height: 1.75;           /* Nyaman untuk teks deskriptif */
+    max-width: 520px;            /* Kontrol lebar teks */
+  }
+  
+  
+  /* =========================
+     RESULTS
+     ========================= */
+  
+  /* Container list hasil / benefit */
+  .results ul {
+    max-width: 700px;            /* Batasi lebar agar fokus */
+    margin: auto;                /* Center */
+    list-style: none;            /* Hilangkan bullet default */
+  }
+  
+  /* Item hasil */
+  .results li {
+    padding: 16px;               /* Ruang dalam card */
+    margin-bottom: 12px;         /* Jarak antar item */
+    background: #ffffff;         /* Latar putih */
+    border-left: 4px solid var(--leaf-green); /* Aksen brand di kiri */
+    border-radius: 8px;          /* Sudut lembut */
+  }
+  
+  
+  /* =========================
+     CLOSING
+     ========================= */
+  
+  /* Section penutup halaman */
+  .closing {
+    text-align: center;          /* Konten rata tengah */
+    margin-top: 64px;            /* Jarak dari section sebelumnya */
+    padding-bottom: 64px;        /* Ruang bawah agar tidak mepet footer */
+  }
+  
+  /* Gambar penutup */
+  .closing img {
+    width: 100%;                 /* Responsif */
+    max-width: 800px;            /* Batas maksimal */
+    margin-bottom: 24px;         /* Jarak ke teks */
+    border-radius: 12px;         /* Sudut lembut */
+  }
+  
+  /* Paragraf penutup */
+  .closing p {
+    font-size: 18px;             /* Sedikit lebih besar → kesan final statement */
+    max-width: 600px;            /* Fokus & mudah dibaca */
+    margin: auto;                /* Center */
+  }
+  
+  
+  /* =========================
+     CTA BUTTON
+     ========================= */
+  
+  /* Tombol Call-To-Action */
+  .cta-button {
+    display: inline-block;       /* Bisa diberi padding & margin */
+    margin-top: 24px;            /* Jarak dari elemen atas */
+    padding: 12px 28px;          /* Ukuran tombol */
+    border-radius: 999px;        /* Pill shape (full rounded) */
+    background-color: var(--leaf-green); /* Warna utama brand */
+    color: #ffffff;              /* Teks putih */
+    font-size: 14px;             /* Ukuran teks tombol */
+    font-weight: 500;            /* Sedikit tebal */
+    text-decoration: none;       /* Hilangkan underline */
+    transition: 
+      background-color 0.3s ease,
+      transform 0.3s ease;       /* Animasi hover halus */
+  }
+  
+  /* Efek hover CTA */
+  .cta-button:hover {
+    background-color: #5b7f64;   /* Hijau lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek naik halus */
+  }
+  
+  
+  /* =========================
+     SCROLL ANIMATION
+     ========================= */
+  
+  /* State awal: tersembunyi */
+  .fade-section {
+    opacity: 0;                  /* Tidak terlihat */
+    transform: translateY(40px); /* Posisi turun */
+    transition: 
+      opacity 0.8s ease,
+      transform 0.8s ease;       /* Animasi masuk */
+  }
+  
+  /* State saat muncul */
+  .fade-section.show {
+    opacity: 1;                  /* Muncul penuh */
+    transform: translateY(0);    /* Kembali ke posisi normal */
+  }
+  
