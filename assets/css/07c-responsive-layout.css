@@ -60,3 +60,76 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+@media (max-width: 768px) {
+  .image-text {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .image-text > div,
+  .ingredient-text,
+  .image-text img {
+    max-width: 100%;
+  }
+
+  .ingredient-item .ingredient-inner {
+    /* flex-direction: column; */
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ingredient-inner img,
+  .ingredient-text {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================
+   INGREDIENT – TABLET BALANCE FIX
+   ========================= */
+
+   @media (min-width: 769px) and (max-width: 1024px) {
+
+    .ingredient-item .ingredient-inner {
+      gap: 48px;               /* Kurangi napas */
+    }
+  
+    .ingredient-inner img {
+      max-width: 420px;        /* KUNCI: kecilkan gambar */
+    }
+  
+    .ingredient-text {
+      max-width: 380px;        /* Seimbangkan teks */
+    }
+  }
+  
+
+  /* =========================
+   INGREDIENT – BREAKPOINT FIX
+   ========================= */
+
+/* 2 kolom HANYA jika layar cukup lebar */
+@media (max-width: 600px) {
+
+  .ingredient-item .ingredient-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .ingredient-inner img,
+  .ingredient-text {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .image-frame {
+    max-width: 100%;
+    aspect-ratio: 3 / 4; /* sedikit lebih tinggi di mobile */
+  }
+}

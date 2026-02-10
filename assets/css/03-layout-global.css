@@ -16,6 +16,10 @@ section {
     padding-top: 32px;           /* Jarak antar section agar tidak terlalu rapat */
   }
   
+  /* Hilangkan extra spacing dari section sebelumnya */
+section + .closing {
+  padding-top: 32px;
+}
   
   /* =========================
      GLOBAL LAYOUT FIX
@@ -97,6 +101,32 @@ section {
   }
   
   
+/* =========================
+   EDITORIAL IMAGE + TEXT
+   (GLOBAL – ALL PAGES)
+   ========================= */
+
+   .image-text {
+    display: flex;                 /* GANTI GRID → FLEX */
+    align-items: flex-start;       /* Teks tidak dipaksa center */
+    justify-content: center;
+    gap: 72px;                     /* Napas editorial */
+    margin: 96px auto;
+  }
+  
+  /* Kolom teks */
+  .image-text > div,
+  .ingredient-text {
+    max-width: 420px;              /* KUNCI PROPORSI TEKS */
+  }
+  
+  /* Kolom gambar */
+  .image-text img {
+    width: 100%;
+    max-width: 520px;              /* KUNCI PROPORSI GAMBAR */
+    border-radius: 12px;
+  }
+  
   /* =========================
      RESULTS
      ========================= */
@@ -125,8 +155,8 @@ section {
   /* Section penutup halaman */
   .closing {
     text-align: center;          /* Konten rata tengah */
-    margin-top: 64px;            /* Jarak dari section sebelumnya */
-    padding-bottom: 64px;        /* Ruang bawah agar tidak mepet footer */
+    margin-top: 24px;            /* Jarak dari section sebelumnya */
+    padding-bottom: 12px;        /* Ruang bawah agar tidak mepet footer */
   }
   
   /* Gambar penutup */
@@ -141,7 +171,16 @@ section {
   .closing p {
     font-size: 18px;             /* Sedikit lebih besar → kesan final statement */
     max-width: 600px;            /* Fokus & mudah dibaca */
-    margin: auto;                /* Center */
+    margin-top: 24px;          /* Jarak napas dari gambar */
+    text-align: center;        /* PENUTUP → CENTER */
+    /* font-size: 16px;           Sedikit lebih kecil dari body besar */
+    line-height: 1.6;
+  
+    /* max-width: 520px;          Lebar sempit → terasa reflektif */
+    margin-left: auto;
+    margin-right: auto;
+  
+    color: var(--text-muted);  /* Lebih lembut dari konten utama */
   }
   
   

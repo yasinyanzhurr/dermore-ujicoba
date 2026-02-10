@@ -1,4 +1,46 @@
 /* =========================
+   IMAGE FRAME SYSTEM
+   ========================= */
+
+   .image-frame {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 4 / 5;          /* KUNCI PROPORSI */
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f4f4f4;          /* fallback */
+  }
+  
+  /* Gambar di dalam frame */
+  .image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;            /* POTONG, BUKAN PIPIH */
+    display: block;
+  }
+  
+  .closing .image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* POTONG RAPI, BUKAN MELAR */
+    display: block;
+  }
+  
+/* =========================
+   CLOSING IMAGE (FINAL)
+   ========================= */
+
+   .closing .image-frame {
+    max-width: 900px;          /* Lebar aman, tidak seperti hero */
+    margin: 0 auto 24px;
+  
+    aspect-ratio: 16 / 9;      /* LANDSCAPE → INI KUNCI UTAMA */
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+  
+/* =========================
    INGREDIENT ALIGNMENT FIX
    (ADD-ON, STABLE VERSION)
    ========================= */
@@ -8,17 +50,24 @@
     max-width: 1100px;              /* Batas lebar agar konten tidak melebar */
     margin: 0 auto;                 /* Center secara horizontal */
   
-    display: grid;                  /* Grid untuk alignment presisi */
-    grid-template-columns: 1fr 1fr; /* Dua kolom: image + text */
-    align-items: center;            /* Vertikal sejajar */
-    gap: 48px;                      /* Jarak antar kolom */
+    display: grid;                  /* flex Grid untuk alignment presisi */
+    grid-template-columns: 1fr 1fr; /* Dua kolom: image + text  */
+    align-items: center;            /* flex-start Vertikal sejajar */
+    gap: 72px;                      /* Jarak antar kolom */
+    /* justify-content: center; */
   }
   
   /* Pastikan sistem image-text lama tidak bentrok */
   .ingredient-item.image-text {
     display: block;                 /* Matikan grid lama */
+    margin: 0 auto;
   }
   
+  /* Kurangi jarak antar ingredient */
+.ingredient-item {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
   /* =========================
      IMAGE
      ========================= */
@@ -26,7 +75,9 @@
   /* Gambar ingredient */
   .ingredient-inner img {
     width: 100%;                    /* Responsif */
-    max-width: 420px;               /* Batas maksimal gambar */
+    max-width: 520px;               /* Batas maksimal gambar */
+    height: auto;
+    border-radius: 12px;
   }
   
   /* =========================
@@ -35,7 +86,7 @@
   
   /* Container teks ingredient */
   .ingredient-text {
-    max-width: 520px;               /* Kontrol lebar teks agar nyaman dibaca */
+    max-width: 420px;               /* Kontrol lebar teks agar nyaman dibaca */
   }
   
   /* =========================
