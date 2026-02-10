@@ -37,8 +37,9 @@
   .nav-container {
     max-width: 1200px;                   /* Batas lebar konten */
     margin: auto;                        /* Center horizontal */
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 30px;
     display: flex;                       /* Flex layout */
     justify-content: space-between;      /* Logo kiri, menu kanan */
     align-items: center;                 /* Vertikal sejajar */

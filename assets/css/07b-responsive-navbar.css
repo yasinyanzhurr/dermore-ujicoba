@@ -32,7 +32,7 @@
     }
   
     .nav-logo img {
-      height: 96px;                    /* Logo tetap besar */
+      height: 36px;                    /* Logo tetap besar */
     }
   
     .nav-toggle {
@@ -79,7 +79,7 @@
     }
   
     .nav-logo img {
-      height: 96px;                    /* Logo tetap dominan */
+      height: 48px;                    /* Logo tetap dominan */
     }
   
     .nav-toggle {
