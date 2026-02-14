@@ -496,4 +496,71 @@
     color: var(--text-dark);
     font-weight: 500;
   }
-  
+
+
+/* =========================
+   BEFORE AFTER SECTION
+========================= */
+
+.before-after {
+  padding: 80px 10%;
+  background: #fafafa;
+  text-align: center;
+}
+
+.before-after-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.before-after h2 {
+  margin-bottom: 16px;
+}
+
+.before-after .section-intro {
+  max-width: 600px;
+  margin: 0 auto 48px;
+  color: var(--text-muted);
+}
+
+.before-after-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.ba-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+}
+
+.ba-card img {
+  width: 100%;
+  display: block;
+}
+
+.label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 999px;
+}
+
+.ba-note {
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .before-after-grid {
+    grid-template-columns: 1fr;
+  }
+}
