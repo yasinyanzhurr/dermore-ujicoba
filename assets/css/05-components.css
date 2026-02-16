@@ -4,7 +4,7 @@
 
    .image-frame {
     width: 100%;
-    max-width: 520px;
+    max-width: 800px;
     aspect-ratio: 4 / 5;          /* KUNCI PROPORSI */
     border-radius: 16px;
     overflow: hidden;
@@ -17,13 +17,16 @@
     height: 100%;
     object-fit: cover;            /* POTONG, BUKAN PIPIH */
     display: block;
+    object-position: center;
   }
   
   .closing .image-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;         /* POTONG RAPI, BUKAN MELAR */
-    display: block;
+    /* display: left center; */
+    object-position: 30% center;
+
   }
   
 /* =========================
@@ -31,7 +34,7 @@
    ========================= */
 
    .closing .image-frame {
-    max-width: 900px;          /* Lebar aman, tidak seperti hero */
+    width: 900px;          /* Lebar aman, tidak seperti hero */
     margin: 0 auto 24px;
   
     aspect-ratio: 16 / 9;      /* LANDSCAPE → INI KUNCI UTAMA */
@@ -86,7 +89,7 @@
   
   /* Container teks ingredient */
   .ingredient-text {
-    max-width: 420px;               /* Kontrol lebar teks agar nyaman dibaca */
+    max-width: 720px;               /* Kontrol lebar teks agar nyaman dibaca */
   }
   
   /* =========================

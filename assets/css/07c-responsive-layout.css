@@ -130,6 +130,6 @@
 @media (max-width: 900px) {
   .image-frame {
     max-width: 100%;
-    aspect-ratio: 3 / 4; /* sedikit lebih tinggi di mobile */
+    aspect-ratio: 16 / 9; /* sedikit lebih tinggi di mobile */
   }
 }
