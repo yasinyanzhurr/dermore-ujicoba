@@ -27,7 +27,10 @@
   --soft-pink: #F3C6CF;
 
   /* Warna hijau natural → identitas utama brand */
-  --leaf-green: #6B8F71;
+  /* --leaf-green: #6B8F71; */
+
+    /* Warna biru-teal utama → mengikuti warna produk */
+  --leaf-green: #2C6F78;
 
   /* Warna emas → aksen premium / highlight */
   --gold-accent: #C9A24D;
