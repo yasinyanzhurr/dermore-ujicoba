@@ -587,7 +587,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
-.testimonial-photo {
+/* .testimonial-photo {
   width: 100%;
   max-width: 260px;
   aspect-ratio: 4 / 5;
@@ -601,7 +601,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 
 
 /* Sensor grid untuk foto kolase before/after */
