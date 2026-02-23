@@ -1,3 +1,17 @@
+const fallbackNavbarMarkup = `
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Dermoree</a>
+      <ul class="nav-menu">
+        <li><a href="product.html">PRODUCT</a></li>
+        <li><a href="ourstory.html">OUR STORY</a></li>
+        <li><a href="ingredients.html">INGREDIENTS</a></li>
+        <li><a href="clinical.html">TESTIMONY & SCIENTIFIC REVIEW</a></li>
+      </ul>
+    </div>
+  </nav>
+`;
+
 fetch("partials/navbar.html")
   .then(res => res.text())
   .then(html => {
@@ -34,5 +48,9 @@ fetch("partials/navbar.html")
     }
   })
   .catch(() => {
-    // no-op: navbar partial unavailable
+    const mountPoint = document.getElementById("navbar");
+    if (!mountPoint) return;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(fallbackNavbarMarkup, "text/html");
+    mountPoint.replaceChildren(...doc.body.childNodes);
   });

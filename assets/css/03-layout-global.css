@@ -228,3 +228,21 @@ section + .closing {
     transform: translateY(0);    /* Kembali ke posisi normal */
   }
   
+  
+/* Accessibility: skip link */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 1200;
+  background: #fff;
+  color: #1d1d1d;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+.skip-link:focus {
+  top: 12px;
+}
