@@ -1,8 +1,12 @@
+document.documentElement.classList.add("js-enabled");
+
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".fade-section");
-
   const counters = document.querySelectorAll(".percent-card strong");
-if (sections.length > 0) {
+  if (sections.length > 0) {
+    if (!("IntersectionObserver" in window)) {
+      sections.forEach(section => section.classList.add("show"));
+    } else {
     const sectionObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -15,16 +19,23 @@ if (sections.length > 0) {
       {
         threshold: 0.15
       }
-
-      }
     );
 
     sections.forEach(section => {
       sectionObserver.observe(section);
     });
+    }
   }
 
   if (counters.length > 0) {
+    if (!("IntersectionObserver" in window)) {
+      counters.forEach(counter => {
+        const target = Number(counter.dataset.count || 0);
+        counter.textContent = `${target}%`;
+      });
+      return;
+    }
+    
     const counterObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {

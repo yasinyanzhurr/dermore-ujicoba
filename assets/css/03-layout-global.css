@@ -215,15 +215,20 @@ section + .closing {
   
   /* State awal: tersembunyi */
   .fade-section {
-    opacity: 0;                  /* Tidak terlihat */
-    transform: translateY(40px); /* Posisi turun */
-    transition: 
-      opacity 0.8s ease,
-      transform 0.8s ease;       /* Animasi masuk */
+    opacity: 1;
+    transform: none;
+  }
+    
+  .js-enabled .fade-section {
+      opacity: 0;  
+      transform: translateY(40px);
+      transition: 
+        opacity 0.8s ease,
+        transform 0.8s ease;       /* Animasi masuk */
   }
   
   /* State saat muncul */
-  .fade-section.show {
+  .js-enabled .fade-section.show {
     opacity: 1;                  /* Muncul penuh */
     transform: translateY(0);    /* Kembali ke posisi normal */
   }
