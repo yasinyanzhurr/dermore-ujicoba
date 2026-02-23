@@ -134,26 +134,26 @@
   
   /* Variant background untuk halaman produk */
   .hero-product {
-    background-image: url('../images/product3.png');
+    background-image: url('../images/product3.webp');
   }
   
   /* Variant background halaman ingredients */
   .hero-ingredients {
-    background-image: url('../images/ingredients.png');
+    background-image: url('../images/ingredients.webp');
   }
   
   /* Variant background halaman clinical */
   .hero-clinical {
-    background-image: url('../images/science/lab-2.png');
+    background-image: url('../images/science/lab-2.webp');
   }
   
   /* Variant background halaman our story */
   .hero-ourstory {
-    background-image: url('../images/ourstory.png');
+    background-image: url('../images/ourstory.webp');
   }
   
   .hero-home {
-    background-image: url('../images/home.png');
+    background-image: url('../images/home.webp');
   }
   
   
